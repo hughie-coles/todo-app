@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import {Route, Switch} from 'react-router';
+import Listing from './components/listview/Listing';
+import Edit from './components/shared/Edit';
+import { BrowserRouter } from 'react-router-dom';
+
+
 
 function App() {
+  const [cards, updateCards] = React.useState([
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Switch>
+          <Route path='/edit/:id' render={ (p) => {
+                                                          p.updateCards = updateCards;
+                                                          p.cards = cards; //make sure the cards are added before the props are spread
+                                                          return <Edit {...p} /> } 
+                                                  }/>
+          <Route path='/create' render={() => <Edit cards={cards} updateCards={updateCards} /> }  />
+          <Route path='/' render={() => <Listing cards={cards} updateCards={updateCards} /> } />
+      </Switch>
+    </BrowserRouter>
+  )
 }
 
 export default App;

@@ -1,0 +1,25 @@
+.form {
+  width: 15%;
+  margin: 10px auto;
+}
+
+.formControl {
+  margin: 15px;
+}
+
+label {
+  display: block;
+}
+
+input,
+select,
+textarea {
+  width: 280px;
+  height: 35px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 50px;
+}

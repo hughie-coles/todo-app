@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('The "Add Task" button is rendered', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  const addButtonElement = screen.getByText('Add Task');
+  expect(addButtonElement).toBeInTheDocument();
 });
