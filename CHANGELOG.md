@@ -9,3 +9,7 @@
 ### v0.0.3
 
 - Added a simple header
+
+### v0.0.4
+
+- Added clone functionality

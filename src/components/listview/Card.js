@@ -16,6 +16,7 @@ function Card(props){
             <p>Status: {props.status}</p>
             <p>{props.description}</p>
             <button onClick={ () => goToPage("/edit/" + props.id)} className="button">Edit</button>
+            <button onClick={ () => goToPage("/copy/" + props.id)} className="button">Copy</button>
             <button onClick={ () => { 
                                     const updatedCards = removeCard(props.cards, props.id);
                                     props.updateCards(updatedCards);

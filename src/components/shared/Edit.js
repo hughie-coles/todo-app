@@ -33,7 +33,7 @@ const Edit = (props) => {
                     dueDate: dueDate
                 }
 
-        if (cardId) {
+        if (cardId && !props.isCopy) {
             const updatedCards = editCard(props.cards, cardId, card);
             props.updateCards(updatedCards);
         }
