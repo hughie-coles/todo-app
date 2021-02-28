@@ -1,8 +1,8 @@
 # Hughie's Blockchain-based, AI-driven TODO List
 
-I've started with a bare-bones implementation of a todo list. It's got an in-memory store, which means a browser refresh whipes the data. It has basic Create/Edit/Delete functionality.
+I've started with a bare-bones implementation of a todo list. It's got a local-storage based store so that it's durable across browser sessions as well as refreshes.
 
-It's built fully in react, and is, in my opinion, the minimal set of functionality to match the requirements
+It's built fully in react. It has the minimum set of functionality, plus a few extras such as a "copy" feature.
 
 To run, simply pull this repo, run `npm install`, followed by `npm start`
 
