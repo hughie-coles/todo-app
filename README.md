@@ -9,3 +9,4 @@ To run, simply pull this repo, run `npm install`, followed by `npm start`
 Here are a few design-decisions that I made (and can identify as decisions)
 
 - I chose to use uuid's for ids because managing an auto-incrementing id across components was irritating. In the case of an actual db backing, there would be other considerations.
+- I chose localStorage over session storage because I wanted long-term durabilty.

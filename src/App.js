@@ -4,6 +4,7 @@ import {Route, Switch} from 'react-router';
 import Listing from './components/listview/Listing';
 import Edit from './components/shared/Edit';
 import { BrowserRouter } from 'react-router-dom';
+import Header from './components/Header';
 
 
 
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Header />
       <Switch>
           <Route path='/edit/:id' render={ (p) => {
                                                           p.updateCards = updateCardsWithStorage;
