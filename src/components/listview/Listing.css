@@ -1,0 +1,21 @@
+h3 {
+  font-family: sans-serif;
+}
+
+label,
+p {
+  font-family: sans-serif;
+}
+
+li {
+  list-style-type: none;
+  margin: 10px;
+}
+
+li > div {
+  border: 1px grey solid;
+  border-radius: 5px;
+  padding: 0 20px 20px 20px;
+  width: 400px;
+  background: #f5f5f5;
+}

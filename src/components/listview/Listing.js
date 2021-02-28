@@ -1,6 +1,7 @@
 
 import Card from "./Card"
 import { useHistory } from "react-router-dom";
+import './Listing.css';
 
 function Listing(props){
 
@@ -16,7 +17,7 @@ function Listing(props){
             <ul>
                 {items}
             </ul>
-            <button onClick={goToCreate} className="button">Add Task</button>
+            <button onClick={goToCreate} className="button" style={ {margin: "10px 0 40px 50px"} }>Add Task</button>
         </>
         )
 }

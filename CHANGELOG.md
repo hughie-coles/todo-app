@@ -13,3 +13,9 @@
 ### v0.0.4
 
 - Added clone functionality
+
+### v0.0.5
+
+- Change edit form to use datepicker for DueDate field
+- Changed "In Progress" to "Pending"
+- Add some styling, date formatting
