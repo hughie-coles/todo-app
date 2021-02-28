@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Listing from './Listing';
 
 
-/* This test is emptyish.  Trying to stick to the time limit, 
+/* This test suite is emptyish.  Trying to stick to the time limit, 
    so I'm light on the tests.  I'm leaving some scenarios here */
 
 test('if an empty list is passed in, there should be no cards', () => {
