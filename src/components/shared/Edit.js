@@ -14,6 +14,8 @@ const Edit = (props) => {
         cardToEdit = props.cards.find( (c) => c.id === cardId) || {};
     }
 
+    const buttonLabel = ( (cardId && !props.isCopy) ? "Update" : "Add") + " Task";
+
     const [name, setName] = useState(cardToEdit.name || "");
     const [description, setDescription] = useState(cardToEdit.description || "");
     const [status, setStatus] = useState(cardToEdit.status || "");
@@ -63,16 +65,16 @@ const Edit = (props) => {
                         <select name="cardStatus" onChange={ e => setStatus(e.target.value)} value={status}>
                             <option value=''>Select One</option>
                             <option value="ready">Ready</option>
-                            <option value="inprogress">In Progress</option>
+                            <option value="pending">Pending</option>
                             <option value="completed">Completed</option>
                         </select>
                     </div>
                     <div className="formControl">
                         <label htmlFor="cardDueDate">Due Date:</label>
-                        <input name="cardDueDate" type="text" onChange={ e => setDueDate(e.target.value)} value={dueDate} />
+                        <input name="cardDueDate" type="datetime-local" onChange={ e => setDueDate(e.target.value)} value={dueDate} />
                     </div>
                     <div className="formControl">
-                        <input type="submit" value="Add Task" />
+                        <input type="submit" value={buttonLabel} />
                     </div>
                 </section>
             </form>
