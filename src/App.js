@@ -8,19 +8,31 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 function App() {
-  const [cards, updateCards] = React.useState([
-  ]);
+
+  let loadedCards = localStorage.getItem('cards');
+  loadedCards = loadedCards ? JSON.parse(loadedCards) : [];
+
+  console.log(loadedCards);
+  const [cards, updateCards] = React.useState(loadedCards);
+
+  const updateCardsWithStorage = (cards) => {
+    console.log("Storing cards");
+
+    localStorage.setItem('cards', JSON.stringify(cards));
+    updateCards(cards);
+    console.log(localStorage.getItem('cards'));
+  }
 
   return (
     <BrowserRouter>
       <Switch>
           <Route path='/edit/:id' render={ (p) => {
-                                                          p.updateCards = updateCards;
+                                                          p.updateCards = updateCardsWithStorage;
                                                           p.cards = cards; //make sure the cards are added before the props are spread
                                                           return <Edit {...p} /> } 
                                                   }/>
-          <Route path='/create' render={() => <Edit cards={cards} updateCards={updateCards} /> }  />
-          <Route path='/' render={() => <Listing cards={cards} updateCards={updateCards} /> } />
+          <Route path='/create' render={() => <Edit cards={cards} updateCards={updateCardsWithStorage} /> }  />
+          <Route path='/' render={() => <Listing cards={cards} updateCards={updateCardsWithStorage} /> } />
       </Switch>
     </BrowserRouter>
   )
