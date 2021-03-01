@@ -26,6 +26,7 @@ function Card(props){
             <p>Due Date: { formatDate(props.dueDate)}</p>
             <p>Status: {props.status}</p>
             <p>{props.description}</p>
+      
             <button onClick={ () => goToPage("/edit/" + props.id)} className="button">Edit</button>
             <button onClick={ () => goToPage("/copy/" + props.id)} className="button">Copy</button>
             <button onClick={ () => { 

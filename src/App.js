@@ -1,10 +1,10 @@
 import './App.css';
 import React from 'react';
 import {Route, Switch} from 'react-router';
-import Listing from './components/listview/Listing';
 import Edit from './components/shared/Edit';
 import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
+import Dashboard from './components/Dashboard'
 
 function App() {
 
@@ -37,7 +37,7 @@ function App() {
                                                           return <Edit {...p} isCopy={true} /> } 
                                                   }/>
           <Route path='/create' render={() => <Edit cards={cards} updateCards={updateCardsWithStorage} /> }  />
-          <Route path='/' render={() => <Listing cards={cards} updateCards={updateCardsWithStorage} /> } />
+          <Route path='/' render={() => <Dashboard cards={cards} updateCards={updateCardsWithStorage} /> } />
       </Switch>
     </BrowserRouter>
   )
