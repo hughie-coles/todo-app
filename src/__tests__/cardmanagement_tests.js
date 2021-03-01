@@ -40,7 +40,7 @@ test("add card to list that already contains items", () => {
             id: "5",
             name: "test 2",
             description: "2nd test card",
-            status: "inprogress",
+            status: "pending",
             dueDate: "1999-01-01",
         }
     ]
@@ -63,7 +63,7 @@ test("add card to list that already contains items", () => {
 
     expect(newList[1].name).toBe("test 2");
     expect(newList[1].description).toBe("2nd test card");
-    expect(newList[1].status).toBe("inprogress");
+    expect(newList[1].status).toBe("pending");
     expect(newList[1].dueDate).toBe("1999-01-01");
     expect(newList[1].id).toBe("5");
 
